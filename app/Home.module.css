@@ -1,10 +1,10 @@
 @keyframes slide-in {
     from {
-        transform: translateY(100%);
+        transform: translateY(20px);
         opacity: 0;
     }
     to {
-        transform: translateY(0%);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -47,7 +47,7 @@
     text-align: center;
 
     .apresentacao {
-        animation: slide-in 1000ms;
+        animation: slide-in 1000ms  ease-out forwards;
 
         span {
             display: block;
@@ -66,6 +66,7 @@
     }
 
     .botaocentral {
+        animation: slide-in 1300ms ease-out forwards;
         background-color: #027a4c;
         border: none;
         border-radius: 8px;
@@ -81,7 +82,7 @@
     }
 
     .metricas {
-        animation: slide-in 1300ms;
+        animation: slide-in 1500ms ease-out forwards;
         margin-top: 2rem;
 
         p {
