@@ -2,6 +2,7 @@
 
 import Modal from "@/components/home/modal";
 import { useState } from "react";
+import Image from 'next/image'
 
 import styles from "./Home.module.css";
 
@@ -17,9 +18,7 @@ export default function Home() {
         </button> 
       </div>
 
-      <Modal isOpen={open} onClose={() => setOpen(false)}>
-        <h2>Modal com Styled Components</h2>
-      </Modal>
+      <Modal isOpen={open} onClose={() => setOpen(false)}/>
 
       <div className={styles.container}>
 
@@ -65,6 +64,13 @@ export default function Home() {
       <div className={styles.footer}>
 
         <p>© 2026 Vet & Agro Ltda. Todos os direitos reservados.</p>
+
+        <div className={styles.nextjslogo}>
+
+          <p>Powered by</p>
+          <Image src="/next.svg" width={50} height={50} alt="Picture of the author" /> 
+
+        </div>
 
       </div>
       

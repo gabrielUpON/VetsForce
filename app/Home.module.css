@@ -1,10 +1,18 @@
+@keyframes slide-in {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
 .main {
-  display: flex;
-  flex-direction: column; /* mobile */
-  background: linear-gradient(to bottom, #2aa8fc 20%, #03945c 80%);
-  @media (min-width: 768px) {
-    flex-direction: column; /* desktop */
-  }
+    display: flex;
+    flex-direction: column; /* mobile */
+    background: linear-gradient(to bottom, #2aa8fc 20%, #03945c 80%);
 }
 .cabecalho  {
     display: flex;
@@ -39,37 +47,54 @@
     text-align: center;
 
     .apresentacao {
+        animation: slide-in 1000ms;
+
         span {
-        display: block;
-        font-size: 2rem;
-        font-weight: bold;
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
         }
         span:nth-child(2) {
-        color: #3AFF51;
+            color: #3AFF51;
         }
         p {
-        margin-top: 25px;
-        font-size: 1.225rem;
+            margin-top: 25px;
+            font-size: 1.2rem;
         }
     }
 
     .metricas {
+        animation: slide-in 1300ms;
         margin-top: 2rem;
 
         p {
-        margin-top: 1rem;
+            margin-top: 1rem;
         }
 
         span {
-        margin-left: 2rem;
+            margin-left: 2rem;
         }
     }
 }
 
 .footer {
-    background-color: #161616;
-    text-align: center;
-    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9F9F9;
+    font-size: 0.9rem;
     margin-top: 16px;
     padding: 8px;
+    gap: 32px; 
+
+    p {
+        color: black;
+    }
+
+    .nextjslogo {
+        display: flex;
+        align-items: center; 
+        gap: 8px; 
+    }
 }

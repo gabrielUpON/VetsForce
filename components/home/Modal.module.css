@@ -1,7 +1,18 @@
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .main {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,13 +23,43 @@
     border-radius: 8px;
     min-width: 300px;
     position: relative;
+    animation: fadeUp 0.7s ease;
 
-    button {
+    .closer {
       position: absolute;
       top: 10px;
       right: 10px;
       border: none;
       background: transparent;
       cursor: pointer;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: medium;
+            margin-bottom: 1.2rem;
+        }
+
+        button {
+            font-size: 0.8rem;
+            font-weight: bold;
+            background-color: #03945c;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 0.7rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+        button:hover {
+            background-color: #027a4c;
+            transition: background-color 0.5s ease;
+        }
     }
 }
