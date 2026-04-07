@@ -1,15 +1,18 @@
 "use client";
 
-import Modal from "@/components/modal";
+import Modal from "@/components/home/modal";
 import { useState } from "react";
+
+import styles from "./Home.module.css";
+
 
 export default function Home() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col bg-[linear-gradient(to_bottom,#2aa8fc_20%,#03945c_80%)]">
+    <div className={styles.main}>
 
-      <div className="flex p-[10px] fixed top-[0] left-[0] w-full backdrop-filter backdrop-blur-[10px] [box-shadow:0_8px_20px_rgba(0,_0,_0,_0.10)]">
-        <button className="text-[0.8rem] font-bold bg-[#03945c] hover:bg-[#027a4c] rounded-lg ml-auto mr-4 px-[0.7rem] py-2 cursor-pointer transition-colors duration-500" onClick={() => setOpen(true)}>
+      <div className={styles.cabecalho}>
+        <button className={styles.botao} onClick={() => setOpen(true)}>
           Entrar
         </button> 
       </div>
@@ -18,17 +21,27 @@ export default function Home() {
         <h2>Modal com Styled Components</h2>
       </Modal>
 
-      <div className="mt-28 text-center">
+      <div className={styles.container}>
 
-        <span className="block text-2xl font-bold">Sua plataforma completa</span>
-        <span className="block text-2xl font-bold text-[#3AFF51]">para otimizar suas vendas</span>
-        <p className="mt-6 text-[1.225rem]">Analise, gerencie e otimize de forma inteligente seus clientes, produtos e a força da sua equipe.</p>
-        
-        <div className="mt-8">
+        <div className={styles.apresentacao}>
+          <span>
+            Sua plataforma completa
+          </span>
 
-          <p className="mt-4">1000+ clientes</p>
-          <p className="mt-4">5000+ produtos</p>
-          <p className="mt-4">IA personalizada<span className="ml-8">relatórios gerenciais</span></p>
+          <span>
+            para otimizar suas vendas
+          </span>
+
+          <p>
+            Analise, gerencie e otimize de forma inteligente seus clientes, produtos e a força da sua equipe.
+          </p>
+        </div>
+
+        <div className={styles.metricas}>
+
+          <p >1000+ clientes</p>
+          <p>5000+ produtos</p>
+          <p>IA personalizada<span>relatórios gerenciais</span></p>
 
         </div>
 
@@ -49,7 +62,7 @@ export default function Home() {
 
       </div>
 
-      <div className="bg-[#161616] text-center text-[0.8rem] mt-[16px] p-[8px]">
+      <div className={styles.footer}>
 
         <p>© 2026 Vet & Agro Ltda. Todos os direitos reservados.</p>
 

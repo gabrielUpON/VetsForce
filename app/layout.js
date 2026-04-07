@@ -7,7 +7,7 @@ export const metadata = {
 export default function DashboardLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className="font-sans text-[#F9F9F9]">
+      <body suppressHydrationWarning>
         <main>{children}</main>
       </body>
     </html>
