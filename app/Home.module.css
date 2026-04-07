@@ -28,7 +28,7 @@
 .botao {
     font-size: 0.8rem;
     font-weight: bold;
-    background-color: #03945c;
+    background-color: #027a4c;
     border: none;
     border-radius: 8px;
     margin-left: auto;
@@ -38,7 +38,7 @@
 }
 
 .botao:hover {
-  background-color: #027a4c;
+  background-color: #03945c;
   transition: background-color 0.5s ease;
 }
 
@@ -54,13 +54,30 @@
             font-size: 2rem;
             font-weight: bold;
         }
-        span:nth-child(2) {
+
+        span:nth-of-type(2) {
             color: #3AFF51;
         }
+        
         p {
             margin-top: 25px;
             font-size: 1.2rem;
         }
+    }
+
+    .botaocentral {
+        background-color: #027a4c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        margin-top: 32px;
+        padding: 0.8rem 1rem;
+    }
+
+    .botaocentral:hover {
+        background-color: #03945c;
+        transition: background-color 0.5s ease;
     }
 
     .metricas {

@@ -36,6 +36,10 @@ export default function Home() {
           </p>
         </div>
 
+        <button className={styles.botaocentral} onClick={() => setOpen(true)}>
+          Comece Agora !
+        </button>
+
         <div className={styles.metricas}>
 
           <p >1000+ clientes</p>

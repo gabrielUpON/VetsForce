@@ -14,7 +14,7 @@ export default function Modal({ isOpen, onClose }) {
         <form onSubmit={(e) => e.preventDefault()}>
           <h2>Bem-vindo!</h2>
           <h3>Faça login na sua conta VetsForce</h3>
-          <label htmlFor="uname"><b>Username</b></label>
+          <label htmlFor="uname"><b>E-mail</b></label>
           <input type="text" placeholder="Enter Username" name="uname" required />
 
           <label htmlFor="psw"><b>Password</b></label>
