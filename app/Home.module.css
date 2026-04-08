@@ -14,6 +14,7 @@
     flex-direction: column; /* mobile */
     background: linear-gradient(to bottom, #2aa8fc 20%, #03945c 80%);
 }
+
 .cabecalho  {
     display: flex;
     padding: 10px 10px;
@@ -45,55 +46,57 @@
 .container {
     margin-top: 7rem;
     text-align: center;
+}
 
-    .apresentacao {
-        animation: slide-in 1000ms  ease-out forwards;
+.apresentacao {
+    animation: slide-in 1000ms  ease-out;
 
-        span {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        span:nth-of-type(2) {
-            color: #3AFF51;
-        }
-        
-        p {
-            margin-top: 25px;
-            font-size: 1.2rem;
-        }
+    span {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
     }
 
-    .botaocentral {
-        animation: slide-in 1300ms ease-out forwards;
-        background-color: #027a4c;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
+    span:nth-of-type(2) {
+        color: #3AFF51;
+    }
+    
+    p {
+        margin-top: 25px;
         font-size: 1.2rem;
-        margin-top: 32px;
-        padding: 0.8rem 1rem;
-    }
-
-    .botaocentral:hover {
-        background-color: #03945c;
-        transition: background-color 0.5s ease;
-    }
-
-    .metricas {
-        animation: slide-in 1500ms ease-out forwards;
-        margin-top: 2rem;
-
-        p {
-            margin-top: 1rem;
-        }
-
-        span {
-            margin-left: 2rem;
-        }
     }
 }
+
+.botaocentral {
+    animation: slide-in 1300ms ease-out;
+    background-color: #027a4c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 32px;
+    padding: 0.8rem 1rem;
+}
+
+.botaocentral:hover {
+    background-color: #03945c;
+    transition: background-color 0.5s ease;
+}
+
+.metricas {
+    animation: slide-in 1500ms ease-out;
+    margin-top: 2rem;
+
+    p {
+        margin-top: 1rem;
+    }
+
+    span {
+        margin-left: 2rem;
+    }
+}
+
+
 
 .footer {
     display: flex;
@@ -115,4 +118,25 @@
         align-items: center; 
         gap: 8px; 
     }
+}
+
+.radar {
+  position: relative; /* referência */
+  display: inline-block;
+  margin-top: 32px;
+  animation: slide-in 1700ms ease-out;
+}
+
+.radar p {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: rgba(0, 0, 0, 0.315); /* opcional (melhor leitura) */
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
 }

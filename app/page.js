@@ -1,14 +1,27 @@
 "use client";
-
-import Modal from "@/components/home/modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from 'next/image'
 
 import styles from "./Home.module.css";
-
+import Modal from "@/components/home/modal";
 
 export default function Home() {
+
   const [open, setOpen] = useState(false);
+  const [numero, setNumero] = useState(5);
+
+  useEffect(() => {
+    let i = 5;
+
+    const interval = setInterval(() => {
+      setNumero(i);
+      i++;
+
+      if (i > 39) clearInterval(interval);
+    }, 100); // velocidade
+        return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className={styles.main}>
 
@@ -44,8 +57,13 @@ export default function Home() {
 
           <p >1000+ clientes</p>
           <p>5000+ produtos</p>
-          <p>IA personalizada<span>relatórios gerenciais</span></p>
+          <p>IA personalizada<span>Relatórios gerenciais</span></p>
 
+        </div>
+
+        <div className={styles.radar} >
+          <Image loading="eager" src="/line-graph-svgrepo-com.svg" width={150} height={150} alt="Picture of the author" /> 
+          <p>+R$ {numero} mil</p>
         </div>
 
         <article>
