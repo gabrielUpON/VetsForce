@@ -86,10 +86,15 @@
     animation: slide-in 1500ms ease-out;
     margin-top: 2rem;
 }
+
 .specMetricas {
     display: flex;
     margin-top: 1rem;
     gap: 8px;
+}
+
+.grafico {
+    animation: slide-in 1700ms ease-out;
 }
 
 .footer {
@@ -115,27 +120,8 @@
     gap: 8px; 
 }
 
-.radar {
-  position: relative; /* referência */
-  display: inline-block;
-  margin-top: 32px;
-  animation: slide-in 1700ms ease-out;
-}
-
-.radar p {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-
-  font-size: 1rem;
-  font-weight: bold;
-
-  background: rgba(0, 0, 0, 0.315); /* opcional (melhor leitura) */
-  padding: 2px 6px;
-  border-radius: 4px;
-}
 /* Tablets */
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .main {
         flex-direction: column;
     }
@@ -147,17 +133,19 @@
     }
 
     .apresentacao span {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     .apresentacao p {
-        font-size: 1.2rem;
-        
+        font-size: 1.35rem;
+        max-width: 80%;
+        margin: 1rem auto; 
     }
 
     .botaocentral {
-        font-size: 1rem;
-        padding: 0.6rem 0.8rem;
+        margin-top: 16px;
+        font-size: 1.225rem;
+        padding: 0.8rem 1rem;
     }
 
     .metricas {
@@ -175,18 +163,22 @@
         text-align: center;
     }
 
+    .grafico {
+        width: 50%;
+        max-width: 300px; 
+        height: auto;
+        display: block;
+        margin: 1rem auto 0 auto;
+    }
+
     .footer {
         flex-direction: column;
         gap: 12px;
         text-align: center;
     }
-
-    .radar p {
-        font-size: 0.8rem;
-    }
 }
 
-/* Mobile pequeno */
+/* Mobile */
 @media (max-width: 480px) {
     .main {
         flex-direction: column;
@@ -207,8 +199,8 @@
     }
 
     .botaocentral {
-        font-size: 1rem;
-        padding: 0.6rem 0.8rem;
+        font-size: 1.225rem;
+        padding: 0.8rem 1rem;
     }
 
     .linha {
@@ -220,9 +212,5 @@
         flex-direction: column;
         gap: 12px;
         text-align: center;
-    }
-
-    .radar p {
-        font-size: 0.8rem;
     }
 }

@@ -76,12 +76,14 @@ export default function Home() {
           </div>
 
         </div>
-
-        <div className={styles.radar} >
-          <Image loading="eager" src="/line-graph-svgrepo-com.svg" width={150} height={150} alt="Picture of the author" /> 
-          <p>+R$ {numero} mil</p>
-        </div>
-
+        <Image
+          className={styles.grafico}
+          src="/line-graph-svgrepo-com.svg"
+          alt="Radar"
+          width={150}   // ou valor responsivo
+          height={150}
+          style={{ objectFit: 'contain' }}
+        />
         <article>
           <h2>Analise vendas em produndidade</h2>
           <p>Analise, crie, envie pedidos de forma facil e inteligente.Acompanhe o andamento até a prateleira.</p>
