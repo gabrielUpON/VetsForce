@@ -55,9 +55,25 @@ export default function Home() {
 
         <div className={styles.metricas}>
 
-          <p >1000+ clientes</p>
-          <p>5000+ produtos</p>
-          <p>IA personalizada<span>Relatórios gerenciais</span></p>
+          <div className={styles.specMetricas}>
+            <Image src="/people-svgrepo-com.svg" width={23} height={23} alt="clientes"/>
+            <p>1000+ clientes</p>
+          </div>
+
+          <div className={styles.specMetricas}>
+            <Image src="/box-1-svgrepo-com.svg" width={23} height={23} alt="produtos"/>
+            <p>5000+ produtos</p>
+          </div>
+
+          <div className={styles.specMetricas}>
+            <Image src="/star-shape-1-svgrepo-com.svg" width={23} height={23} alt="IA"/>
+            <p>IA personalizada</p>
+          </div>
+
+          <div className={styles.specMetricas}>
+            <Image src="/pie-chart-1-svgrepo-com.svg" width={23} height={23} alt="Relatórios"/>
+            <p>Relatórios gerenciais</p>
+          </div>
 
         </div>
 

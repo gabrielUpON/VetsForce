@@ -11,7 +11,6 @@
 
 .main {
     display: flex;
-    flex-direction: column; /* mobile */
     background: linear-gradient(to bottom, #2aa8fc 20%, #03945c 80%);
 }
 
@@ -24,6 +23,7 @@
     width: 100%;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    z-index: 1;
 }
 
 .botao {
@@ -44,27 +44,26 @@
 }
 
 .container {
-    margin-top: 7rem;
-    text-align: center;
+    margin-top: 10rem;
 }
 
 .apresentacao {
     animation: slide-in 1000ms  ease-out;
+}
 
-    span {
-        display: block;
-        font-size: 2rem;
-        font-weight: bold;
-    }
+.apresentacao span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+}
 
-    span:nth-of-type(2) {
-        color: #3AFF51;
-    }
-    
-    p {
-        margin-top: 25px;
-        font-size: 1.2rem;
-    }
+.apresentacao span:nth-of-type(2) {
+    color: #3AFF51;
+}
+
+.apresentacao p {
+    margin-top: 25px;
+    font-size: 1.2rem;
 }
 
 .botaocentral {
@@ -86,17 +85,12 @@
 .metricas {
     animation: slide-in 1500ms ease-out;
     margin-top: 2rem;
-
-    p {
-        margin-top: 1rem;
-    }
-
-    span {
-        margin-left: 2rem;
-    }
 }
-
-
+.specMetricas {
+    display: flex;
+    margin-top: 1rem;
+    gap: 8px;
+}
 
 .footer {
     display: flex;
@@ -109,15 +103,16 @@
     padding: 8px;
     gap: 32px; 
 
-    p {
-        color: black;
-    }
+}
 
-    .nextjslogo {
-        display: flex;
-        align-items: center; 
-        gap: 8px; 
-    }
+.footer p {
+    color: black;
+}
+
+.nextjslogo {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
 }
 
 .radar {
@@ -136,7 +131,98 @@
   font-weight: bold;
 
   background: rgba(0, 0, 0, 0.315); /* opcional (melhor leitura) */
-  color: white;
   padding: 2px 6px;
   border-radius: 4px;
+}
+/* Tablets */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .container {
+        margin-top: 10rem;
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .apresentacao span {
+        font-size: 2.5rem;
+    }
+
+    .apresentacao p {
+        font-size: 1.2rem;
+        
+    }
+
+    .botaocentral {
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .metricas {
+        display: flex;
+        flex-wrap: wrap;       /* permite quebrar linha se não couber */
+        justify-content: center; /* centraliza os blocos */
+        gap: 8px;              /* espaço entre os blocos */
+        margin-top: 1rem;
+    }
+
+    .specMetricas {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .radar p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .container {
+        margin-top: 7rem;
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .apresentacao span {
+        font-size: 2.225rem;
+    }
+
+    .apresentacao p {
+        font-size: 1.35rem;
+    }
+
+    .botaocentral {
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .linha {
+        flex-direction: column; /* quebra os 2 últimos */
+        align-items: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .radar p {
+        font-size: 0.8rem;
+    }
 }
