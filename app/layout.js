@@ -8,7 +8,7 @@ export default function DashboardLayout({ children }) {
   return (
     <html lang="pt-br">
       <body suppressHydrationWarning>
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
