@@ -8,19 +8,6 @@ import Modal from "@/components/home/modal";
 export default function Home() {
 
   const [open, setOpen] = useState(false);
-  const [numero, setNumero] = useState(5);
-
-  useEffect(() => {
-    let i = 5;
-
-    const interval = setInterval(() => {
-      setNumero(i);
-      i++;
-
-      if (i > 39) clearInterval(interval);
-    }, 100); // velocidade
-        return () => clearInterval(interval);
-  }, []);
 
   return (
     <>

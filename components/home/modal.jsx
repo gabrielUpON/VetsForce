@@ -3,33 +3,40 @@
 import styles from "./Modal.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { loginRequest } from "@/backend/authService";
 
 export default function Modal({ isOpen, onClose }) {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const USER = "admin@vetsforce.com";
-  const PASSWORD = "Vet753951";
+  const router = useRouter();
 
   if (!isOpen) return null;
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
+    setError("");
+    setLoading(true);
 
-    if (email === USER && password === PASSWORD) {
+    try {
+      await loginRequest(email, password);
+
       router.push("/blog");
-    } else {
-      alert("E-mail ou senha inválidos");
+
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
     <div className={styles.main}>
       <div className={styles.box}>
-
         <button className={styles.closer} onClick={onClose}>X</button>
 
         <form onSubmit={handleLogin}>
@@ -54,11 +61,16 @@ export default function Modal({ isOpen, onClose }) {
               onChange={(e) => setPassword(e.target.value)}
               required 
             />
-            <p onClick={() => setShowPassword(!showPassword)}>Mostrar senha</p>
+            <p onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? "Ocultar" : "Mostrar"} senha
+            </p>
           </div>
-              
-          <button type="submit">Acessar</button>
 
+          {error && <p className={styles.error}>{error}</p>}
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Entrando..." : "Acessar"}
+          </button>
         </form>
       </div>
     </div>
