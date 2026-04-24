@@ -1,14 +1,11 @@
 export async function loginRequest(usuario, senha) {
-  const response = await fetch("http://192.168.1.10:3000/api/login", {
+  const response = await fetch("/api/login", {
     method: "POST",
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: "include",
-    body: JSON.stringify({
-      usuario,
-      senha,
-    }),
+    body: JSON.stringify({ usuario, senha }),
   });
 
   const data = await response.json();
