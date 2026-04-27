@@ -1,9 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import Image from 'next/image'
 
-import styles from "./Home.module.css";
-import Modal from "@/components/home/modal";
+import styles from "../css/app/page.module.css";
+import Modal from "@/components/LoginModal.jsx";
 
 export default function Home() {
 
@@ -35,6 +36,7 @@ export default function Home() {
               className={styles.grafico1}
               src="/line-graph-svgrepo-com.svg"
               alt="Radar"
+              loading="eager"
               width={300}
               height={300}
             />

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Modal.module.css";
+import styles from "../css/components/LoginModal.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { loginRequest } from "@/backend/authService";
