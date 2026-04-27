@@ -85,22 +85,27 @@ export default function Home() {
 
         <div className={styles.container3}>
           <p className={styles.title}>Uma plataforma, três superpoderes</p>
-          <p className={styles.subtitle}>Uma plataforma, três superpoderes</p>
+          <p className={styles.subtitle}>Tudo que você precisa para crescer com mais clareza</p>
+          
+          <div className={styles.containerArticle}>
 
-          <article>
-            <h2>Analise vendas em produndidade</h2>
-            <p>Analise, crie, envie pedidos de forma facil e inteligente.Acompanhe o andamento até a prateleira.</p>
-          </article>
+            <article className={styles.boxArticle}>
+              <h3>Analise vendas em produndidade</h3>
+              <p>Analise, crie, envie pedidos de forma facil e inteligente.Acompanhe o andamento até a prateleira.</p>
+            </article>
 
-          <article>
-            <h2>Genrencie seus clientes</h2>
-            <p>O que ele comprou ou deixou de comprar, relatório financeiro, histórico e relação.</p>
-          </article>
+            <article className={styles.boxArticle}>
+              <h3>Genrencie seus clientes</h3>
+              <p>O que ele comprou ou deixou de comprar, relatório financeiro, histórico e relação.</p>
+            </article>
 
-          <article>
-            <h2>Tire dúvidas com a IA</h2>
-            <p>Uma IA treinada e alimentada com ativos e históricos da Vet & Agro capaz de lhe auxiliar de forma inteligente!</p>
-          </article>
+            <article className={styles.boxArticle}>
+              <h3>Tire dúvidas com a IA</h3>
+              <p>Uma IA treinada e alimentada com ativos e históricos da Vet & Agro capaz de lhe auxiliar de forma inteligente!</p>
+            </article>
+
+          </div>
+
         </div>
 
       </div>

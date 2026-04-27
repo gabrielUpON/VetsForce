@@ -21,7 +21,7 @@
 .botao {
     font-size: 0.8rem;
     font-weight: bold;
-    background-color: #027a4c;
+    background-color: #03945c;
     border: none;
     border-radius: 8px;
     margin-left: auto;
@@ -31,7 +31,7 @@
 }
 
 .botao:hover {
-  background-color: #03945c;
+  background-color: #027a4c;
   transition: background-color 0.5s ease;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .botaocentral {
-    background-color: #027a4c;
+    background-color: #03945c;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -111,7 +111,7 @@
 }
 
 .botaocentral:hover {
-    background-color: #03945c;
+    background-color: #027a4c;
     transition: background-color 0.5s ease;
 }
 
@@ -153,17 +153,34 @@
     margin-top: 1rem;
 }
 
+.containerArticle {
+    display: flex;
+    gap: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.boxArticle {
+  flex: 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #027a4c;
+  padding: 0.5rem 0.7rem;
+}
+
+.boxArticle h3 {
+  margin-bottom: 0.5rem;
+}
+
 /*=================================================*/
 
 .footer {
-    display: block;
-    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #F9F9F9;
     font-size: 0.9rem;
-    margin-top: 16px;
-    padding: 8px;
+    padding: 0.1rem;
     gap: 32px; 
 
 }
