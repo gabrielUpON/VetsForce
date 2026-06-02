@@ -3,15 +3,21 @@
 import styles from "../css/components/LoginModal.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { loginRequest } from "@/backend/authService";
+import { supabase } from "@/backend/config/supabase";
+
+const { data, error } = await supabase.auth.signInWithPassword({
+  email: 'teste@email.com',
+  password: '123456'
+})
 
 export default function Modal({ isOpen, onClose }) {
   const [showPassword, setShowPassword] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const router = useRouter();
 
@@ -19,16 +25,28 @@ export default function Modal({ isOpen, onClose }) {
 
   async function handleLogin(e) {
     e.preventDefault();
-    setError("");
+
+    setErrorMessage("");
     setLoading(true);
 
     try {
-      await loginRequest(email, password);
+
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      // Login válido
+      console.log(data);
 
       router.push("/blog");
 
     } catch (err) {
-      setError(err.message);
+      setErrorMessage(err.message);
     } finally {
       setLoading(false);
     }
@@ -66,7 +84,7 @@ export default function Modal({ isOpen, onClose }) {
             </p>
           </div>
 
-          {error && <p className={styles.error}>{error}</p>}
+          {errorMessage && <p className={styles.error}>{errorMessage}</p>}
 
           <button type="submit" disabled={loading}>
             {loading ? "Entrando..." : "Acessar"}

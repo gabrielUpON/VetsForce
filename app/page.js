@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Image from 'next/image'
 
+//Componentes
 import styles from "../css/app/page.module.css";
 import Modal from "@/components/LoginModal.jsx";
+//==============
 
 export default function Home() {
 
