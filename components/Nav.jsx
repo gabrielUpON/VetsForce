@@ -11,7 +11,7 @@ export default function Nav() {
 
   return (
     <>
-      {/* HEADERf */}
+      {/* HEADER */}
       <header className={styles.header}>
         <div className={styles.headerLeft}>
           <div className={styles.logo}>
