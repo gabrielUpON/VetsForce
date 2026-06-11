@@ -1,26 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import Image from 'next/image'
 
-import styles from "./Home.module.css";
-import Modal from "@/components/home/modal";
+//Componentes
+import styles from "../css/app/page.module.css";
+import Modal from "@/components/LoginModal.jsx";
+//==============
 
 export default function Home() {
 
   const [open, setOpen] = useState(false);
-  const [numero, setNumero] = useState(5);
-
-  useEffect(() => {
-    let i = 5;
-
-    const interval = setInterval(() => {
-      setNumero(i);
-      i++;
-
-      if (i > 39) clearInterval(interval);
-    }, 100); // velocidade
-        return () => clearInterval(interval);
-  }, []);
 
   return (
     <>
@@ -48,6 +38,7 @@ export default function Home() {
               className={styles.grafico1}
               src="/line-graph-svgrepo-com.svg"
               alt="Radar"
+              loading="eager"
               width={300}
               height={300}
             />
@@ -94,20 +85,30 @@ export default function Home() {
           />
         </div>
 
-        <article>
-          <h2>Analise vendas em produndidade</h2>
-          <p>Analise, crie, envie pedidos de forma facil e inteligente.Acompanhe o andamento até a prateleira.</p>
-        </article>
+        <div className={styles.container3}>
+          <p className={styles.title}>Uma plataforma, três superpoderes</p>
+          <p className={styles.subtitle}>Tudo que você precisa para crescer com mais clareza</p>
+          
+          <div className={styles.containerArticle}>
 
-        <article>
-          <h2>Genrencie seus clientes</h2>
-          <p>O que ele comprou ou deixou de comprar, relatório financeiro, histórico e relação.</p>
-        </article>
+            <article className={styles.boxArticle}>
+              <h3>Analise vendas em produndidade</h3>
+              <p>Analise, crie, envie pedidos de forma facil e inteligente.Acompanhe o andamento até a prateleira.</p>
+            </article>
 
-        <article>
-          <h2>Tire dúvidas com a IA</h2>
-          <p>Uma IA treinada e alimentada com ativos e históricos da Vet & Agro capaz de lhe auxiliar de forma inteligente!</p>
-        </article>
+            <article className={styles.boxArticle}>
+              <h3>Genrencie seus clientes</h3>
+              <p>O que ele comprou ou deixou de comprar, relatório financeiro, histórico e relação.</p>
+            </article>
+
+            <article className={styles.boxArticle}>
+              <h3>Tire dúvidas com a IA</h3>
+              <p>Uma IA treinada e alimentada com ativos e históricos da Vet & Agro capaz de lhe auxiliar de forma inteligente!</p>
+            </article>
+
+          </div>
+
+        </div>
 
       </div>
 

@@ -70,6 +70,19 @@
             width: 100%;
         }
 
+        .showPsw p {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            text-decoration: underline;
+            cursor: pointer;
+            color: #d9f8ec;
+        }
+
+        .showPsw p:hover {
+            color: #027a4c;
+        }
+
         button {
             font-size: 0.8rem;
             font-weight: bold;
