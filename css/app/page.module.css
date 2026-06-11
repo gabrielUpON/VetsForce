@@ -1,7 +1,7 @@
 .main {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, #2aa8fc 20%, #03945c 80%);
+    background: linear-gradient(to bottom, #2aa8fc 2%, #03945c 98%);
     padding: 0px 50px;
     min-height: 100vh;  
 }
